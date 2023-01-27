@@ -1,0 +1,78 @@
+@startuml
+class com.example.pmd.databinding.ActivityMainBinding {
+- CoordinatorLayout rootView
++ FloatingActionButton fab
++ Toolbar toolbar
++ CoordinatorLayout getRoot()
++ {static} ActivityMainBinding inflate(LayoutInflater)
++ {static} ActivityMainBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ActivityMainBinding bind(View)
+}
+class com.example.pmd.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class com.example.pmd.FirstFragment {
+- FragmentFirstBinding binding
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onDestroyView()
+}
+class com.example.pmd.databinding.FragmentFirstBinding {
+- ConstraintLayout rootView
++ Button buttonFirst
++ TextView textviewFirst
++ ConstraintLayout getRoot()
++ {static} FragmentFirstBinding inflate(LayoutInflater)
++ {static} FragmentFirstBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} FragmentFirstBinding bind(View)
+}
+class com.example.pmd.SecondFragment {
+- FragmentSecondBinding binding
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onDestroyView()
+}
+class com.example.pmd.databinding.FragmentSecondBinding {
+- ConstraintLayout rootView
++ Button buttonSecond
++ TextView textviewSecond
++ ConstraintLayout getRoot()
++ {static} FragmentSecondBinding inflate(LayoutInflater)
++ {static} FragmentSecondBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} FragmentSecondBinding bind(View)
+}
+class com.example.pmd.ExampleInstrumentedTest {
++ void useAppContext()
+}
+class com.example.pmd.ExampleUnitTest {
++ void addition_isCorrect()
+}
+class com.example.pmd.MainActivity {
+- AppBarConfiguration appBarConfiguration
+- ActivityMainBinding binding
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean onSupportNavigateUp()
+}
+class com.example.pmd.databinding.ContentMainBinding {
+- ConstraintLayout rootView
++ ConstraintLayout getRoot()
++ {static} ContentMainBinding inflate(LayoutInflater)
++ {static} ContentMainBinding inflate(LayoutInflater,ViewGroup,boolean)
++ {static} ContentMainBinding bind(View)
+}
+
+
+androidx.viewbinding.ViewBinding <|.. com.example.pmd.databinding.ActivityMainBinding
+androidx.fragment.app.Fragment <|-- com.example.pmd.FirstFragment
+androidx.viewbinding.ViewBinding <|.. com.example.pmd.databinding.FragmentFirstBinding
+androidx.fragment.app.Fragment <|-- com.example.pmd.SecondFragment
+androidx.viewbinding.ViewBinding <|.. com.example.pmd.databinding.FragmentSecondBinding
+androidx.appcompat.app.AppCompatActivity <|-- com.example.pmd.MainActivity
+androidx.viewbinding.ViewBinding <|.. com.example.pmd.databinding.ContentMainBinding
+@enduml
